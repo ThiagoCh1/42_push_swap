@@ -5,7 +5,7 @@
 NAME        = push_swap
 
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+CFLAGS      = -Wall -Wextra -Werror -g
 
 SRC_DIR     = src
 LIBFT_DIR   = 42_libft
