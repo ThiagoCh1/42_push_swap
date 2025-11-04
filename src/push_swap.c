@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:19:37 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/04 18:59:13 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/04 22:15:53 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,57 @@ int	*sorted_arr(char **not_sorted, int len)
 				count++;
 			j++;
 		}
-		sorted[count] = ft_atoi(not_sorted[i]);
+		sorted[i] = count;
 		i++;
 	}
-	sorted[i] = '\0';
 	return (sorted);
 }
 
-int main(int argc, char **argv)
+t_list	*make_list(char *arg)
 {
+	t_node	*item;
+	t_list	*a;
 	char	**num_arr;
-	//t_list	*a;
 	int		i;
 	int		*sorted;
 
 	i = 0;
+	a = NULL;
+	num_arr = ft_split(arg, ' ');
+	while (num_arr[i])
+		i++;
+	sorted = sorted_arr(num_arr, i);
+	i--;
+	while (i >= 0)
+	{
+		item = malloc(sizeof(t_node));
+		item->value = ft_atoi(num_arr[i]);
+		item->index = sorted[i];
+		ft_lstadd_front(&a, ft_lstnew(item));
+		i--;
+	}
+	free(num_arr);
+	free(sorted);
+	return a;
+}
+
+int main(int argc, char **argv)
+{
+	t_list	*a;
+	//t_list	*b;
+
 	if (argc == 2)
 	{
-		num_arr = ft_split(argv[1], ' ');
-		while (num_arr[i])
-			i++;
-		//a = ft_calloc(i, sizeof(t_list));
-		sorted = sorted_arr(num_arr, i + 1);
-		printf("%d, %d, %d", sorted[0], sorted[1], sorted[2]);
+		a = make_list(argv[1]);
+		t_list	*tmp;
+		t_node	*data;
+
+		tmp = a;
+		while (tmp)
+		{
+			data = (t_node *)tmp->content;
+			printf("value: %d | index: %d\n", data->value, data->index);
+			tmp = tmp->next;
+		}
 	}
 }
