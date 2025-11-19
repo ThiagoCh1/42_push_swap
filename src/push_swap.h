@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/19 23:15:42 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/19 23:45:54 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ typedef struct s_node
 	int				index;
 	struct s_node	*next;
 }	t_node;
-
+typedef struct s_stack
+{
+	int	*data;
+	int	cap;
+	int	size;
+	int	head;
+}	t_stack;
 
 
 #endif

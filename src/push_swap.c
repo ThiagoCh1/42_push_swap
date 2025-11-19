@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:19:37 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/04 22:15:53 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/19 23:46:16 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	*sorted_arr(char **not_sorted, int len)
 	int		j;
 	int		*sorted;
 	int		count;
-	
+
 	sorted = malloc(len * sizeof(int));
 	i = 0;
 	while (not_sorted[i])
