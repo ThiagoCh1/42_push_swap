@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   access.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/20 20:30:14 by thribeir         ###   ########.fr       */
+/*   Created: 2025/11/20 16:36:40 by thribeir          #+#    #+#             */
+/*   Updated: 2025/11/20 18:17:23 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "../42_libft/libft.h"
-# include <stdio.h>
+#include "../src/push_swap.h"
 
-typedef struct s_node
+int	stack_at(const t_stack *s, int i)
 {
-	int				value;
-	int				index;
-	struct s_node	*next;
-}	t_node;
-typedef struct s_stack
+	int	num;
+	int actual;
+	
+	actual = (s->head + i) % s->cap;
+	num = s->data[actual];
+	return (num);
+}
+
+void stack_set(t_stack *s, int i, int value)
 {
-	int	*data;
-	int	cap;
-	int	size;
-	int	head;
-}	t_stack;
-
-int	stack_at(const t_stack *s, int i);
-void stack_set(t_stack *s, int i, int value);
-
-#endif
+	int actual;
+	
+	actual = (s->head + i) % s->cap;
+	s->data[actual] = value;
+}

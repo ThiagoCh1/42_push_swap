@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/20 20:30:14 by thribeir         ###   ########.fr       */
+/*   Created: 2025/11/05 17:08:59 by thribeir          #+#    #+#             */
+/*   Updated: 2025/11/05 17:25:26 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "../42_libft/libft.h"
-# include <stdio.h>
+#include "push_swap.h"
+#include <stdio.h>
 
-typedef struct s_node
+int	find_head(char **not_sorted, int len)
 {
-	int				value;
-	int				index;
-	struct s_node	*next;
-}	t_node;
-typedef struct s_stack
-{
-	int	*data;
-	int	cap;
-	int	size;
-	int	head;
-}	t_stack;
-
-int	stack_at(const t_stack *s, int i);
-void stack_set(t_stack *s, int i, int value);
-
-#endif
+	int		i;
+	int		j;
+	int		count;
+	
+	i = 0;
+	while (not_sorted[i])
+	{
+		j = 0;
+		count = 0;
+		while (not_sorted[j])
+		{
+			if (ft_atoi(not_sorted[i]) > ft_atoi(not_sorted[j]))
+				count++;
+			j++;
+		}
+		if (count ==  0)
+			return (i);
+	}
+	return (i);
+}
