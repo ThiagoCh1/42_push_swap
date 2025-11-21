@@ -6,11 +6,11 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 20:13:34 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/20 21:22:28 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/21 00:52:09 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/push_swap.h"
+#include "push_swap.h"
 
 void	stack_init(t_stack *s, int size)
 {

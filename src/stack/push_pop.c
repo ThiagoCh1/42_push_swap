@@ -6,11 +6,11 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:24:29 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/20 18:46:27 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/21 00:52:16 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/push_swap.h"
+#include "push_swap.h"
 
 void	push_front(t_stack *s, int value)
 {
@@ -33,7 +33,7 @@ int	pop_front(t_stack *s)
 {
 	int	first;
 
-	first =  stack_at(s, 0);
+	first = stack_at(s, 0);
 	s->head = (s->head + 1) % s->cap;
 	s->size--;
 	return (first);
