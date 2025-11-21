@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/21 00:52:20 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/21 21:41:04 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,13 @@ typedef struct s_ctx
 
 int		stack_at(const t_stack *s, int i);
 void	stack_set(t_stack *s, int i, int value);
+void	push_front(t_stack *s, int value);
+void	push_back(t_stack *s, int value);
+int		pop_front(t_stack *s);
+int		pop_back(t_stack *s);
+void	stack_init(t_stack *s, int size);
+void	stack_free(t_stack *s);
+int		stack_empty(t_stack *s);
+void	print_stack(t_stack *s);
 
 #endif

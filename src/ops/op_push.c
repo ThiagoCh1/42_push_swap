@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_swap.c                                          :+:      :+:    :+:   */
+/*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 00:48:47 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/21 22:45:44 by thribeir         ###   ########.fr       */
+/*   Created: 2025/11/21 21:29:29 by thribeir          #+#    #+#             */
+/*   Updated: 2025/11/21 22:15:48 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_sa(t_ctx *ctx)
+void	op_pb(t_ctx *ctx)
 {
 	int	n;
-	int	n2;
 
-	if (ctx->a.size < 2)
+	if (stack_empty(&ctx->a))
 		return ;
-	n = stack_at(&ctx->a, 0);
-	n2 = stack_at(&ctx->a, 1);
-	stack_set(&ctx->a, 0, n2);
-	stack_set(&ctx->a, 1, n);
+	n = pop_front(&ctx->a);
+	push_front(&ctx->b, n);
 	if (ctx->op_len < MAX_OPS)
-		ctx->ops[ctx->op_len++] = OP_SA;
+		ctx->ops[ctx->op_len++] = OP_PB;
 }
 
-void	op_sb(t_ctx *ctx)
+void	op_pa(t_ctx *ctx)
 {
 	int	n;
-	int	n2;
 
-	if (ctx->b.size < 2)
+	if (stack_empty(&ctx->b))
 		return ;
-	n = stack_at(&ctx->b, 0);
-	n2 = stack_at(&ctx->b, 1);
-	stack_set(&ctx->b, 0, n2);
-	stack_set(&ctx->b, 1, n);
+	n = pop_front(&ctx->b);
+	push_front(&ctx->a, n);
 	if (ctx->op_len < MAX_OPS)
-		ctx->ops[ctx->op_len++] = OP_SB;
+		ctx->ops[ctx->op_len++] = OP_PA;
 }
