@@ -12,7 +12,16 @@ LIBFT_DIR   = 42_libft
 LIBFT       = $(LIBFT_DIR)/libft.a
 
 # --- sources (explicit, no wildcards) ---
-SRC         = $(SRC_DIR)/push_swap.c
+SRCS 		= \
+			$(SRC_DIR)/stack/access.c \
+			$(SRC_DIR)/stack/push_pop.c \
+			$(SRC_DIR)/stack/stack_utils.c \
+			$(SRC_DIR)/ops/op_push.c \
+			$(SRC_DIR)/ops/op_swap.c \
+			$(SRC_DIR)/ops/op_rotate.c \
+			$(SRC_DIR)/ops/op_rrotate.c \
+			$(SRC_DIR)/main.c
+
 OBJ         = $(SRC:.c=.o)
 
 # =========================
