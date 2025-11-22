@@ -6,13 +6,13 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/21 21:41:04 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/22 21:55:31 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "../42_libft/libft.h"
+# include "libft.h"
 # include <stdio.h>
 
 # define MAX_OPS 200000
@@ -59,5 +59,7 @@ void	stack_init(t_stack *s, int size);
 void	stack_free(t_stack *s);
 int		stack_empty(t_stack *s);
 void	print_stack(t_stack *s);
+void	fill_stack(t_ctx *ctx, char *s);
+void	just_debug(t_stack *s);
 
 #endif
