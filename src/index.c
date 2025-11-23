@@ -1,37 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 17:08:59 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/05 17:25:26 by thribeir         ###   ########.fr       */
+/*   Created: 2025/11/23 01:22:23 by thribeir          #+#    #+#             */
+/*   Updated: 2025/11/23 02:08:07 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	find_head(char **not_sorted, int len)
+int	*ranking(t_stack *a)
 {
-	int		i;
-	int		j;
-	int		count;
-	
+	int	i;
+	int	j;
+	int	count;
+	int	*temp;
+
 	i = 0;
-	while (not_sorted[i])
+	temp = malloc(sizeof(int) * a->size);
+	if (!temp)
+		return (NULL);
+	while (i < a->size)
 	{
 		j = 0;
 		count = 0;
-		while (not_sorted[j])
+		while (j < a->size)
 		{
-			if (ft_atoi(not_sorted[i]) > ft_atoi(not_sorted[j]))
+			if (stack_at(a, i) > stack_at(a, j))
 				count++;
 			j++;
 		}
-		if (count ==  0)
-			return (i);
+		temp[i] = count;
+		i++;
 	}
-	return (i);
+	return (temp);
+}
+
+void	index_stack(t_stack *a)
+{
+	int		*temp;
+	int		i;
+
+	i = 0;
+	temp = ranking(a);
+	if (!temp)
+		return ;
+	while (i < a->size)
+	{
+		stack_set(a, i, temp[i]);
+		i++;
+	}
+	free(temp);
 }

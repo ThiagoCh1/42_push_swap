@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/22 21:55:31 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/23 02:12:03 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,26 @@ int		stack_empty(t_stack *s);
 void	print_stack(t_stack *s);
 void	fill_stack(t_ctx *ctx, char *s);
 void	just_debug(t_stack *s);
+void	index_stack(t_stack *a);
+
+// ops_push.c
+void	op_pa(t_ctx *ctx);
+void	op_pb(t_ctx *ctx);
+
+// ops_swap.c
+void	op_sa(t_ctx *ctx);
+void	op_sb(t_ctx *ctx);
+//void    op_ss(t_ctx *ctx);
+
+// ops_rotate.c
+void	op_ra(t_ctx *ctx);
+void	op_rb(t_ctx *ctx);
+//void    op_rr(t_ctx *ctx);
+
+// ops_reverse.c
+void	op_rra(t_ctx *ctx);
+void	op_rrb(t_ctx *ctx);
+//void	op_rrr(t_ctx *ctx);
+
 
 #endif
