@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 01:22:23 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/23 02:08:07 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:00:40 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,18 @@ void	index_stack(t_stack *a)
 		i++;
 	}
 	free(temp);
+}
+
+int	is_sorted(t_stack *a)
+{
+	int	i;
+
+	i = 0;
+	while (i < a->size - 1)
+	{
+		if (stack_at(a, i) > stack_at(a, i + 1))
+			return (0);
+		i++;
+	}
+	return (1);
 }

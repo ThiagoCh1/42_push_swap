@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 20:13:34 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/21 21:53:42 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/25 18:04:56 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,6 @@ void	print_stack(t_stack *s)
 	while (i < s->size)
 	{
 		ft_printf("Logical index %d: %d\n", i, stack_at(s, i));
-		i++;
-	}
-	i = 0;
-	ft_printf("Physical index: \n");
-	while (i < s->cap)
-	{
-		ft_printf("Physical index %d: %d \n", i, s->data[i]);
 		i++;
 	}
 }

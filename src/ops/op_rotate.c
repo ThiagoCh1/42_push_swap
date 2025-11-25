@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 21:30:19 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/21 23:05:37 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/25 18:40:17 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 void	op_ra(t_ctx *ctx)
 {
+	int	n;
+
 	if (ctx->a.size < 2)
 		return ;
-	ctx->a.head = (ctx->a.head + 1) % ctx->a.cap;
+	n = pop_front(&ctx->a);
+	push_back(&ctx->a, n);
 	if (ctx->op_len < MAX_OPS)
 		ctx->ops[ctx->op_len++] = OP_RA;
 }
+
 
 void	op_rb(t_ctx *ctx)
 {

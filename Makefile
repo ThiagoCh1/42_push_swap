@@ -19,9 +19,12 @@ SRCS        = \
 			$(SRC_DIR)/ops/op_swap.c \
 			$(SRC_DIR)/ops/op_rotate.c \
 			$(SRC_DIR)/ops/op_reverse.c \
+			$(SRC_DIR)/algo/LIS.c \
+			$(SRC_DIR)/algo/push_to_b.c \
 			$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parse.c \
 			$(SRC_DIR)/index.c
+
 
 OBJS        = $(SRCS:.c=.o)
 

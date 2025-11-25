@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   access.c                                           :+:      :+:    :+:   */
+/*   push_to_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/20 16:36:40 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/25 13:50:50 by thribeir         ###   ########.fr       */
+/*   Created: 2025/11/25 16:37:59 by thribeir          #+#    #+#             */
+/*   Updated: 2025/11/25 18:34:42 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_at(const t_stack *s, int i)
+void	push_non_lis(t_ctx *ctx, int *keep)
 {
-	int	num;
-	int	actual;
+	int	i;
+	int	n;
 
-	actual = (s->head + i) % s->cap;
-	num = s->data[actual];
-	return (num);
-}
-
-void	stack_set(t_stack *s, int i, int value)
-{
-	int	actual;
-
-	actual = (s->head + i) % s->cap;
-	s->data[actual] = value;
+	i = 0;
+	n = ctx->a.size;
+	while (i < n)
+	{
+		if (keep[i] == 1)
+			op_ra(ctx);
+		else
+			op_pb(ctx);	
+		i++;
+	}
 }
