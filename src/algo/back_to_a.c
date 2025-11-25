@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:29:41 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/25 23:23:01 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/25 23:41:18 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	normalize_a(t_ctx *ctx)
 	int	n;
 
 	n = ctx->a.size;
-	t = find_target_index(&ctx->a, get_min_index(&ctx->a));
+	t = get_min_index(&ctx->a);
 	if (t <= n / 2)
 	{
 		while (t > 0)
