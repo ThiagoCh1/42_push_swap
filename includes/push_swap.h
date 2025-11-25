@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/25 17:36:40 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:45:35 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 # include "libft.h"
 # include <stdio.h>
+# include <limits.h>
 
 # define MAX_OPS 200000
 # define ERROR_MSG "Error\n"
