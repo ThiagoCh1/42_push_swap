@@ -21,6 +21,7 @@ SRCS        = \
 			$(SRC_DIR)/ops/op_reverse.c \
 			$(SRC_DIR)/algo/LIS.c \
 			$(SRC_DIR)/algo/push_to_b.c \
+			$(SRC_DIR)/algo/back_to_a.c \
 			$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parse.c \
 			$(SRC_DIR)/index.c
