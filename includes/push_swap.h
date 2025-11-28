@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/28 00:27:57 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/28 02:52:13 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	rotate_a(t_ctx *ctx);
 void	normalize_a(t_ctx *ctx);
 void	print_ops(t_ctx *ctx);
 int		is_valid_int(const char *s);
+int		has_duplicates(t_stack *s);
 
 // ops_push.c
 void	op_pa(t_ctx *ctx);

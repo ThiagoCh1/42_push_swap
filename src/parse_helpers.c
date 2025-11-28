@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 23:04:15 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/27 23:08:26 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/28 02:51:43 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,26 @@ int	is_valid_int(const char *s)
 	if (!is_in_int_range(s))
 		return (0);
 	return (1);
+}
+
+int	has_duplicates(t_stack *s)
+{
+	int	i;
+	int	j;
+	int	v;
+
+	i = 0;
+	while (i < s->size)
+	{
+		j = i + 1;
+		v = stack_at(s, i);
+		while (j < s->size)
+		{
+			if (v == stack_at(s, j))
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

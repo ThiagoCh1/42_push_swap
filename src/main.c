@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 18:09:38 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/28 01:31:34 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/28 02:53:57 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int	main(int argc, char **argv)
 	t_ctx	ctx;
 	int		*keep;
 
+	keep = NULL;
 	if (argc >= 2)
 	{
-		if (fill_stack(&ctx, argv[1]) == -1)
+		if (fill_stack(&ctx, argv[1]) == -1 || has_duplicates(&ctx.a))
 		{
 			ft_printf("%s", ERROR_MSG);
 			free_all(&ctx, keep);
