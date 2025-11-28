@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/25 23:23:22 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/28 00:27:57 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	stack_init(t_stack *s, int size);
 void	stack_free(t_stack *s);
 int		stack_empty(t_stack *s);
 void	print_stack(t_stack *s);
-void	fill_stack(t_ctx *ctx, char *s);
+int		fill_stack(t_ctx *ctx, char *s);
 void	just_debug(t_stack *s);
 void	index_stack(t_stack *a);
 int		is_sorted(t_stack *a);
@@ -68,6 +68,8 @@ int		*build_lis_keep(t_stack *a);
 void	push_non_lis(t_ctx *ctx, int *keep);
 void	rotate_a(t_ctx *ctx);
 void	normalize_a(t_ctx *ctx);
+void	print_ops(t_ctx *ctx);
+int		is_valid_int(const char *s);
 
 // ops_push.c
 void	op_pa(t_ctx *ctx);

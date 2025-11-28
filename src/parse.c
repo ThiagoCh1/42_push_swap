@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 19:53:05 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/22 21:55:22 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/28 00:29:49 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,32 @@ void	fill_a(t_stack *a, char **arr)
 	}
 }
 
-void	fill_stack(t_ctx *ctx, char *s)
+
+int	fill_stack(t_ctx *ctx, char *s)
 {
 	char	**num_arr;
 	int		len;
+	int		i;
 
+	i = 0;
 	num_arr = ft_split(s, ' ');
 	if (!num_arr)
-		return ; //for now
+		return (-1);
 	len = split_len(num_arr);
 	if (!init_ctx_stacks(ctx, len))
+		return (free_split(num_arr), -1);
+	while (num_arr[i])
 	{
-		free_split(num_arr);
-		return ; //just to stop
+		if (!is_valid_int(num_arr[i]))
+		{
+			free_split(num_arr);
+			stack_free(&ctx->a);
+			stack_free(&ctx->b);
+			return (-1);
+		}
+		i++;
 	}
-	// later: validate strings / ints here
 	fill_a(&ctx->a, num_arr);
-	free_split(num_arr);
+	return (free_split(num_arr), 1);
 }
 

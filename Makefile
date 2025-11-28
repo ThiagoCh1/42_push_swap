@@ -24,7 +24,9 @@ SRCS        = \
 			$(SRC_DIR)/algo/back_to_a.c \
 			$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parse.c \
-			$(SRC_DIR)/index.c
+			$(SRC_DIR)/index.c \
+			$(SRC_DIR)/print_ops.c \
+			$(SRC_DIR)/parse_helpers.c \
 
 
 OBJS        = $(SRCS:.c=.o)
