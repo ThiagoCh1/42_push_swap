@@ -20,13 +20,18 @@ SRCS        = \
 			$(SRC_DIR)/ops/op_rotate.c \
 			$(SRC_DIR)/ops/op_reverse.c \
 			$(SRC_DIR)/algo/LIS.c \
+			$(SRC_DIR)/algo/patterns.c \
 			$(SRC_DIR)/algo/push_to_b.c \
+			$(SRC_DIR)/algo/helpers_to_b.c \
+			$(SRC_DIR)/algo/cost_pattern.c \
+			$(SRC_DIR)/algo/apply_moves.c \
 			$(SRC_DIR)/algo/back_to_a.c \
 			$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parse.c \
 			$(SRC_DIR)/index.c \
 			$(SRC_DIR)/print_ops.c \
 			$(SRC_DIR)/parse_helpers.c \
+			$(SRC_DIR)/join_args.c \
 
 
 OBJS        = $(SRCS:.c=.o)

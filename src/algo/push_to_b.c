@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 16:37:59 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/25 18:34:42 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:47:45 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push_non_lis(t_ctx *ctx, int *keep)
 		if (keep[i] == 1)
 			op_ra(ctx);
 		else
-			op_pb(ctx);	
+			op_pb(ctx);
 		i++;
 	}
 }

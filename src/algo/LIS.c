@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:27:50 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/25 16:13:18 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:35:35 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static void	lis_fill_keep(int *prev, int *keep, int best, int n)
 	i = 0;
 	while (i < n)
 	{
-    	keep[i] = 0;
-    	i++;
+		keep[i] = 0;
+		i++;
 	}
 	i = best;
 	while (i != -1)
@@ -46,7 +46,7 @@ static int	find_best(int *len, int n)
 	return (best);
 }
 
-static void lis_lp(t_stack *a, int *len, int *prev)
+static void	lis_lp(t_stack *a, int *len, int *prev)
 {
 	int	i;
 	int	j;
@@ -67,7 +67,7 @@ static void lis_lp(t_stack *a, int *len, int *prev)
 			j++;
 		}
 		i++;
-	}	
+	}
 }
 
 int	*build_lis_keep(t_stack *a)

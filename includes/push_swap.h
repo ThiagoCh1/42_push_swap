@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 20:08:56 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/28 02:52:13 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/11/30 21:14:24 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,25 @@ typedef struct s_ctx
 	int			op_len;
 }	t_ctx;
 
+typedef struct s_move_cost
+{
+	int	ra;
+	int	rra;
+	int	rb;
+	int	rrb;
+	int	total;
+	int	index_b;
+}	t_move_cost;
+
+typedef struct s_abinfo
+{
+	int	up_a;
+	int	down_a;
+	int	up_b;
+	int	down_b;
+}	t_abinfo;
+
+
 int		stack_at(const t_stack *s, int i);
 void	stack_set(t_stack *s, int i, int value);
 void	push_front(t_stack *s, int value);
@@ -68,9 +87,20 @@ int		*build_lis_keep(t_stack *a);
 void	push_non_lis(t_ctx *ctx, int *keep);
 void	rotate_a(t_ctx *ctx);
 void	normalize_a(t_ctx *ctx);
+int		find_target_index(t_stack *a, int x);
 void	print_ops(t_ctx *ctx);
 int		is_valid_int(const char *s);
 int		has_duplicates(t_stack *s);
+char	*join_args(int argc, char **argv);
+void	insert_all_from_b(t_ctx *ctx);
+void	apply_move(t_ctx *ctx, t_move_cost *move);
+void	pattern_up_up(t_move_cost *c, t_abinfo *ab);
+void	pattern_down_down(t_move_cost *c, t_abinfo *ab);
+void	pattern_up_down(t_move_cost *c, t_abinfo *ab);
+void	pattern_down_up(t_move_cost *c, t_abinfo *ab);
+void	compute_best_pattern(t_move_cost *cand, t_abinfo *ab);
+
+
 
 // ops_push.c
 void	op_pa(t_ctx *ctx);
@@ -79,17 +109,16 @@ void	op_pb(t_ctx *ctx);
 // ops_swap.c
 void	op_sa(t_ctx *ctx);
 void	op_sb(t_ctx *ctx);
-//void    op_ss(t_ctx *ctx);
 
 // ops_rotate.c
 void	op_ra(t_ctx *ctx);
 void	op_rb(t_ctx *ctx);
-//void    op_rr(t_ctx *ctx);
+void	op_rr(t_ctx *ctx);
 
 // ops_reverse.c
 void	op_rra(t_ctx *ctx);
 void	op_rrb(t_ctx *ctx);
-//void	op_rrr(t_ctx *ctx);
+void	op_rrr(t_ctx *ctx);
 
 
 #endif
