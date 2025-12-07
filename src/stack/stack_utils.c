@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 20:13:34 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/27 22:12:25 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/12/07 16:57:19 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	print_stack(t_stack *s)
 
 void	just_debug(t_stack *s)
 {
-	ft_printf("cap = %d \n size = %d \n head = %d \n", s->cap, s->size, s->head);
+	ft_printf("cap = %d \n size = %d \n head = %d \n",
+		s->cap, s->size, s->head);
 	print_stack(s);
 }

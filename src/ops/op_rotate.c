@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 21:30:19 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/30 21:31:16 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/12/07 16:56:36 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	op_ra(t_ctx *ctx)
 	if (ctx->op_len < MAX_OPS)
 		ctx->ops[ctx->op_len++] = OP_RA;
 }
-
 
 void	op_rb(t_ctx *ctx)
 {

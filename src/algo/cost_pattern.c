@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 18:48:13 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/30 21:43:21 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/12/07 17:18:48 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static void	update_best_rrr(t_move_cost *best, t_abinfo *ab)
 		*best = cand;
 }
 
-
 static void	update_best_ra_rrb(t_move_cost *best, t_abinfo *ab)
 {
 	t_move_cost	cand;
@@ -86,4 +85,3 @@ void	compute_best_pattern(t_move_cost *cand, t_abinfo *ab)
 	update_best_rra_rb(&best, ab);
 	*cand = best;
 }
-

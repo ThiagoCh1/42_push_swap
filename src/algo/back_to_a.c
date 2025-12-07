@@ -6,7 +6,7 @@
 /*   By: thribeir <thribeir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:29:41 by thribeir          #+#    #+#             */
-/*   Updated: 2025/11/30 21:13:24 by thribeir         ###   ########.fr       */
+/*   Updated: 2025/12/07 17:18:59 by thribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,3 @@ void	insert_all_from_b(t_ctx *ctx)
 	}
 	normalize_a(ctx);
 }
-

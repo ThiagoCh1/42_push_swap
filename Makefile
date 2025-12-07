@@ -1,11 +1,7 @@
-# =========================
-#         push_swap
-# =========================
-
 NAME        = push_swap
 
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -g -I includes -I $(LIBFT_DIR)/includes
+CFLAGS      = -Wall -Wextra -Werror -I includes -I $(LIBFT_DIR)/includes
 
 SRC_DIR     = src
 LIBFT_DIR   = 42_libft
@@ -20,12 +16,12 @@ SRCS        = \
 			$(SRC_DIR)/ops/op_rotate.c \
 			$(SRC_DIR)/ops/op_reverse.c \
 			$(SRC_DIR)/algo/LIS.c \
-			$(SRC_DIR)/algo/patterns.c \
 			$(SRC_DIR)/algo/push_to_b.c \
 			$(SRC_DIR)/algo/helpers_to_b.c \
 			$(SRC_DIR)/algo/cost_pattern.c \
 			$(SRC_DIR)/algo/apply_moves.c \
 			$(SRC_DIR)/algo/back_to_a.c \
+			$(SRC_DIR)/algo/small_sort.c \
 			$(SRC_DIR)/main.c \
 			$(SRC_DIR)/parse.c \
 			$(SRC_DIR)/index.c \
@@ -36,10 +32,6 @@ SRCS        = \
 
 OBJS        = $(SRCS:.c=.o)
 
-# =========================
-#         rules
-# =========================
-
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
@@ -48,7 +40,6 @@ $(LIBFT):
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-# Generic compile rule
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
